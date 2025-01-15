@@ -50,7 +50,7 @@ def is_arabic(word):
         for arletter in letters:
             if letter == arletter:
                 isarabic = True
-                break;
+                break
             else:
                 isarabic = False
     return isarabic
