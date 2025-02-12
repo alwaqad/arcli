@@ -15,7 +15,7 @@ import os
 
 ## دالة تتأكد أن الحرف من الحروف المتصلة أو المنفصلة
 def is_connectable(letter):
-    if (letter[0] == 'ا'):
+    if (letter[0] == 'ا' or letter[0] == 'أ' or letter[0] == 'إ' or letter[0] == 'آ'):
         return False
     elif (letter[0] == 'د'):
         return False
@@ -27,6 +27,8 @@ def is_connectable(letter):
         return False
     elif (letter[0] == 'و'):
         return False
+    elif (letter[0] == 'ء'):
+        return False
     elif (letter[0] == ' '):
         return False
     else:
@@ -35,7 +37,8 @@ def is_connectable(letter):
 ## دالة تتأكد أن الحرف ضمن الحروف العربية المدعومة، والمسافة
 def is_arabic(word):
     letters = {
-        'ا' ,'ب' ,'ت' ,
+        'ا' ,'أ' ,'آ' ,
+        'آ' ,'ب' ,'ت' ,
         'ث' ,'ج' ,'ح' ,
         'خ' ,'د' ,'ذ' ,
         'ر' ,'ز' ,'س' ,
@@ -43,8 +46,8 @@ def is_arabic(word):
         'ط' ,'ظ' ,'ع' ,
         'غ' ,'ف' ,'ق' ,
         'ك' ,'ل' ,'م' ,
-        'ن' ,'ه' ,'و' ,
-        'ي' ,' '}
+        'ن' ,'ه' ,'ة' ,'و' ,'ؤ' ,
+        'ي' ,'ى' ,'ئ' ,'ء',' '}
     isarabic = False
     for letter in word:
         for arletter in letters:
@@ -111,13 +114,13 @@ def printletters(lettersarray, fontname):
         for linenumber, line in enumerate(fontlines):
             if (lettersarray[x] in line):
                 startlines.append([])
-                for i in range(1,10,1):
+                for i in range(1,11,1):
                     startlines[x].append(fontlines[linenumber+i])
                 x+=1
                 break
     ## هنا نطبع الأحرف، نطبع أول سطر من كل حرف ومن ثم نضيف سطرًا جديدًا لنبدأ بالأسطر التالية
     ## تطبع الدالة الأحرف من اليسار لليمين لتعرضها على الطرفية بشكل صحيح
-    for line in range(9):
+    for line in range(10):
         for letter in reversed(startlines):
             printnow = letter[line]
             print(printnow[:-1], end='')
