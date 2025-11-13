@@ -25,13 +25,13 @@
 ## التثبيت السريع
 
 ```bash
-curl -sSL https://raw.githubusercontent.com/voratsa/arcli/main/install-arcli.sh | sudo bash
+curl -sSL https://raw.githubusercontent.com/alwaqad/arcli/main/install-arcli.sh | sudo bash
 ```
 
 ## التثبيت اليدوي
 
 ```bash
-git clone https://github.com/voratsa/arcli
+git clone https://github.com/alwaqad/arcli
 cd arcli
 python3 arcli.py
 ```
