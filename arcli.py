@@ -1,3 +1,4 @@
+#!/usr/bin/env python3
 ######################################
 #.......#.....................#...#..#
 #.......#.....................#...#..#
@@ -31,6 +32,30 @@
 
 import os
 import sys
+
+def find_font_file(fontname):
+    script_dir = os.path.dirname(os.path.abspath(__file__))
+    local_path = os.path.join(script_dir, f"{fontname}.txt")
+    if os.path.exists(local_path):
+        return local_path
+    
+    user_path = os.path.expanduser(f"~/.local/share/arcli/{fontname}.txt")
+    if os.path.exists(user_path):
+        return user_path
+    
+    system_path = f"/usr/local/share/arcli/{fontname}.txt"
+    if os.path.exists(system_path):
+        return system_path
+    
+    old_system_path = f"/usr/share/arcli/{fontname}.txt"
+    if os.path.exists(old_system_path):
+        return old_system_path
+    
+    current_dir = f"{fontname}.txt"
+    if os.path.exists(current_dir):
+        return current_dir
+    
+    return None
 
 ## دالة تتأكد أن الحرف من الحروف المتصلة أو المنفصلة
 def is_connectable(letter):
@@ -68,16 +93,6 @@ def is_arabic(word):
     return True
 
 ## دالة تتأكد من موضع كل حرف في الكلمة وتسمي كل حرف في القائمة بالملحق المناسب له
-## تتأكد الدالة من المسافات كذلك
-## إن كان الحرف وحيدًا ترجع الدالة ملحق _وحيد للحرف لتطبعه وحيدًا
-## إن كان الحرف في بداية الكلمة تعطيه الدالة ملحق _مبتدأ
-## إن كان الحرف في الوسط وقبله حرف منفصل تعطيه الدالة ملحق _مبتدأ
-## إن كان الحرف في الوسط وقبله حرف متصل تعطيه الدالة ملحق _وسط
-## إن كان الحرف في النهاية وقبله حرف منفصل تعطيه الدالة ملحق _وحيد
-## إن كان الحرف في النهاية وقبله حرف متصل تعطيه الدالة ملحق _منتهى
-## 
-## تنبيه في حالة إضافة خطوط عليك بإضافة الملحقات لكل الحروف
-## الحروف المنفصلة المبتدأ كالوحيد، والوسط كالمنتهى
 def letters_locations(word):
     words = word.split()
     all_letters = []
@@ -125,11 +140,14 @@ def letters_locations(word):
     
 
 ## دالة تمر على الأسطر في ملف الخط وتضيف الأحرف في  قائمة ثم تطبعها
-## كل حرف له 9 أسطر، انتبه لذلك إن صممت خطك الخاص
 def printletters(lettersarray, fontname):
+    fontpath = find_font_file(fontname)
+    if fontpath is None:
+        print(f"خطأ: ملف الخط {fontname} غير موجود")
+        return
+        
     try:
-        fontname = fontname + ".txt"
-        with open(fontname, 'r', encoding='utf-8') as font:
+        with open(fontpath, 'r', encoding='utf-8') as font:
             fontlines = font.readlines()
     except FileNotFoundError:
         print(f"خطأ: ملف الخط {fontname} غير موجود")
@@ -148,8 +166,7 @@ def printletters(lettersarray, fontname):
                     startlines[x].append(fontlines[linenumber+i])
                 x+=1
                 break
-    ## هنا نطبع الأحرف، نطبع أول سطر من كل حرف ومن ثم نضيف سطرًا جديدًا لنبدأ بالأسطر التالية
-    ## تطبع الدالة الأحرف من اليسار لليمين لتعرضها على الطرفية بشكل صحيح
+
     for line in range(10):
         for letter in reversed(startlines):
             printnow = letter[line]
@@ -158,10 +175,9 @@ def printletters(lettersarray, fontname):
 
 
 ## الحصول على المدخلات من المستخدم
-font_choice = "font1"  # الخط الافتراضي
+font_choice = "font1"
 
 if len(sys.argv) > 1:
-    # فحص إذا كان أول مدخل هو اسم خط
     if sys.argv[1] in ["font1", "font2", "font3", "font4", "font5", "font6"]:
         font_choice = sys.argv[1]
         if len(sys.argv) > 2:
@@ -188,7 +204,3 @@ elif is_arabic(word):
     printletters(printable, font_choice)
 else:
     print("النص الذي أدخلته يحتوي على حروف غير عربية.")
-
-
-## البرنامج يحتاج الكثير من التعديل، وهو في طور التطوير
-## أرحب بأي تعديلات وتحسينات على الأداء عن طريق github
