@@ -27,7 +27,7 @@ install_arcli() {
     echo -e "\033[1;33mEstablishing connection to repository...\033[0m"
 
     rm -rf /tmp/arcli-install
-    if ! git clone https://github.com/voratsa/arcli /tmp/arcli-install 2>/dev/null; then
+    if ! git clone https://github.com/alwaqad/arcli /tmp/arcli-install 2>/dev/null; then
         echo -e "\033[1;31mRepository access failed\033[0m"
         exit 1
     fi
