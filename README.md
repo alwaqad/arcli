@@ -57,39 +57,39 @@ cd arcli
 
 ## الاستخدام
 
-#### كحزمة نظام:
+### كحزمة نظام:
 ```bash
 arcli font1 الوقاد
 arcli font2 السلام
 arcli font3 تجربة
 ```
 
-##### مع الألوان:
+#### مع الألوان:
 ```bash
 arcli --color blue font1 بريمج
 arcli -c red font2 رسوميات
 arcli --color green font3 عربي
 ```
 
-##### مع استبدال النقاط:
+#### مع استبدال النقاط:
 ```bash
 arcli --no-dots font1 طرفية
 arcli -nd -c green font2 آركلي
 ```
 
-##### تفاعلي:
+#### تفاعلي:
 ```bash
 arcli
 ```
 
-# كملف تنفيذي
+### كملف تنفيذي
 
 لا تنسى تغيير `./arcli` إلى مسار الملف التنفيذي الفعلي في ملفاتك.
 ```bash
 ./arcli font1 النص
 ./arcli --color grey --no-dots font2 النص
 ```
-#### من المجلد المحلي:
+### من المجلد المحلي:
 ```bash
 python3 arcli.py font1 النص
 python3 arcli.py --color grey --no-dots font2 النص
