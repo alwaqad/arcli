@@ -38,9 +38,9 @@
 
 ## التثبيت
 
-### التثبيت كملف قابل للتشغيل
+### التثبيت كملف تنفيذي
 
-يمكنك تنزيل ملف من [صفحة الإصدارات](https://github.com/3ammoori/arcli/releases) أو [اضغط هنا](https://github.com/3ammoori/arcli/releases/download/arcli/arcli-linux-x86_64.zip) لتنزيل آخر إصدار مباشرة.
+يمكنك تنزيل ملف تنفيذي من [صفحة الإصدارات](https://github.com/3ammoori/arcli/releases) أو [اضغط هنا](https://github.com/3ammoori/arcli/releases/download/arcli/arcli-linux-x86_64.zip) لتنزيل آخر إصدار مباشرة.
 
 ### التثبيت كحزمة نظام
 
@@ -82,6 +82,13 @@ arcli -nd -c green font2 آركلي
 arcli
 ```
 
+# كملف تنفيذي
+
+لا تنسى تغيير `./arcli` إلى مسار الملف التنفيذي الفعلي في ملفاتك.
+```bash
+./arcli font1 النص
+./arcli --color grey --no-dots font2 النص
+```
 #### من المجلد المحلي:
 ```bash
 python3 arcli.py font1 النص
