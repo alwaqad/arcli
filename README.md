@@ -38,13 +38,17 @@
 
 ## التثبيت
 
+### التثبيت كملف قابل للتشغيل
+
+يمكنك تنزيل ملف من [صفحة الإصدارات](https://github.com/3ammoori/arcli/releases) أو [اضغط هنا](https://github.com/3ammoori/arcli/releases/download/arcli/arcli-linux-x86_64.zip) لتنزيل آخر إصدار مباشرة.
+
 ### التثبيت كحزمة نظام
 
 ```bash
 curl -sSL https://raw.githubusercontent.com/alwaqad/arcli/main/install-arcli.sh | sudo bash
 ```
 
-### التثبيت كمجلد محلي
+### تثبيت خام كمجلد محلي
 
 ```bash
 git clone https://github.com/alwaqad/arcli
