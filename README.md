@@ -40,9 +40,15 @@
 
 ### التثبيت كملف تنفيذي
 
-يمكنك تنزيل ملف تنفيذي من [صفحة الإصدارات](https://github.com/3ammoori/arcli/releases) أو [اضغط هنا](https://github.com/3ammoori/arcli/releases/download/arcli/arcli-linux-x86_64.zip) لتنزيل آخر إصدار مباشرة.
+يمكنك تنزيل ملف تنفيذي من [صفحة الإصدارات](https://github.com/3ammoori/arcli/releases) أو أنقر أدناه حسب نظام التشغيل الخاص بك لتنزيل أحدث إصدار لنظام التشغيل الخاص بك مباشرة:
+- [لينكس 64-بت](https://github.com/3ammoori/arcli/releases/download/arcli/arcli-linux-x64.zip)
+- [لينكس آرم 64](https://github.com/3ammoori/arcli/releases/download/arcli/arcli-linux-arm64.zip)
+- [لينكس آرم](https://github.com/3ammoori/arcli/releases/download/arcli/arcli-linux-arm.zip)
+- [ماك أو إس آرم 64](https://github.com/3ammoori/arcli/releases/download/arcli/arcli-macos-arm64.zip)
+- [ماك أو إس 64-بت](https://github.com/3ammoori/arcli/releases/download/arcli/arcli-macos-x64.zip)
+- [ويندوز 64-بت](https://github.com/3ammoori/arcli/releases/download/arcli/arcli-windows-x64.zip)
 
-### التثبيت كحزمة نظام
+### التثبيت كحزمة نظام (لينكس فقط)
 
 ```bash
 curl -sSL https://raw.githubusercontent.com/alwaqad/arcli/main/install-arcli.sh | sudo bash
