@@ -42,9 +42,9 @@
 
 يمكنك تنزيل ملف تنفيذي من [صفحة الإصدارات](https://github.com/3ammoori/arcli/releases) أو أنقر أدناه حسب نظام التشغيل الخاص بك لتنزيل أحدث إصدار لنظام التشغيل الخاص بك مباشرة:
 - [ويندوز 64-بت](https://github.com/3ammoori/arcli/releases/download/arcli/arcli-windows-x64.zip)
-- [لينكس آرم 64-بت](https://github.com/3ammoori/arcli/releases/download/arcli/arcli-linux-arm64.zip)
+- [لينكس آرم 64](https://github.com/3ammoori/arcli/releases/download/arcli/arcli-linux-arm64.zip)
 - [لينكس آرم](https://github.com/3ammoori/arcli/releases/download/arcli/arcli-linux-arm.zip)
-- [ماك آرم 64-بت](https://github.com/3ammoori/arcli/releases/download/arcli/arcli-macos-arm64.zip)
+- [ماك أو إس آرم 64](https://github.com/3ammoori/arcli/releases/download/arcli/arcli-macos-arm64.zip)
 - [ماك أو إس 64-بت](https://github.com/3ammoori/arcli/releases/download/arcli/arcli-macos-x64.zip)
 - [ويندوز 64-بت](https://github.com/3ammoori/arcli/releases/download/arcli/arcli-windows-x64.zip)
 
